@@ -1,0 +1,34 @@
+<body>
+    <div class="main">
+        <form style="width: 100%">
+            <h1 class="header">Login</h1>
+            <div class="container">
+                <div>
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>Email</mat-label>
+                        <input matInput [formControl]='Email' placeholder="Email" required>
+                        <mat-error *ngIf='Email.invalid'>
+                            {{getEmailError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>Password</mat-label>
+                        <input matInput [formControl]='Password' [type]="hide ? 'password' : 'text'">
+                        <div mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </div>
+                        <mat-error *ngIf='Password.invalid'>{{getpasswordError()}}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="button">
+                    <button [routerLink]="['/register']" class="link">sign in insted</button>
+                    <button type="submit" class="registerbutton" mat-stroked-button (click)="SnackBar()">Login</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>

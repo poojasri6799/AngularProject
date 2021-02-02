@@ -1,0 +1,61 @@
+.input{
+    width: 85%;
+}
+
+.container{
+    //background: red;
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+ 
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.header{
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 10px 0px;
+    
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 35%;
+    border: 1px solid rgb(10, 2, 2);
+    border-radius: 10px;
+    background-color:  rgb(222, 224, 215);
+}
+
+.link{
+    margin-right: 45%;
+}
+.registerbutton {
+    background-color: rgba(113, 183, 223, 0.568);
+    margin-right: 50px;
+    border-radius: 7px;
+    height: 30px;
+}
+
+.link{
+    border-radius: 8px;
+    background-color: rgba(113, 183, 223, 0.568);
+    box-shadow: none;
+    height: 30px;
+}
+
+
