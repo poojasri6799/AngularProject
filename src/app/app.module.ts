@@ -15,13 +15,24 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from'@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { EmployeeInfoComponent } from './employee-info/employee-info.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ExampleComponent } from './component/example/example.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule, MatTab} from '@angular/material/tabs';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    EmployeeInfoComponent,
+    ExampleComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +45,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

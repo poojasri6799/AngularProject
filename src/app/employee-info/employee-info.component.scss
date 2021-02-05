@@ -1,0 +1,122 @@
+.input{
+    width: 100%;
+    
+}
+
+.input1{
+    margin-right: 16px;
+}
+.input2{
+    //margin-right: 40px;
+    width: 47%
+}
+
+.container{
+    //background: red;
+    //margin-left: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+ 
+
+body{
+    display: flex;
+    justify-content: center;
+   
+    align-items: center;
+    background-image: url("../../assets/Images/bg1.jpg");
+    background-repeat: no-repeat;
+    //background-size: 2000px 3000px;
+    //margin-top: 10%;
+}
+
+
+.header{
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(128, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 10px 0px;
+
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 50%;
+    //margin-left: 50px;
+    border: 1px solid rgb(10, 2, 2);
+    border-radius: 10px;
+    border-color: rgb(128, 20, 20);
+    background-color:  rgb(222, 224, 215);
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+
+.registerbutton {
+    background-color: rgb(128, 20, 20);
+    //margin-right: 70px;
+    border-radius: 5px;
+    //height: 30px;
+    padding: 10px 12px 10px 12px;
+    color: white;
+    font-weight: bold;
+}
+
+.link{
+    border-radius: 8px;
+    background-color: rgba(16, 18, 19, 0.568);
+    box-shadow: none;
+    height: 30px;
+}
+
+.toolbar{
+    background: rgba(121, 155, 165, 0.418);
+    padding: 0%;
+    width: 100%;
+    min-width: 800px;
+    overflow:auto;
+}
+
+.title{
+    color: black;
+    margin-left: 5%;
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.searchCard{
+    width:35%;
+    background: #ffff;
+    margin-left: 30%;
+    border-radius: 5px;
+}
+
+.search{
+    color:  rgb(17, 16, 16);
+
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  .settings {
+    flex: 0.25  auto;
+}
+.img {
+    border-radius: 50%;
+  }
+
+
+//   .gender{
+//       display: flex;
+//       flex-direction: row;
+//   }

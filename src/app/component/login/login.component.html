@@ -16,7 +16,8 @@
                     <mat-form-field appearance="outline" class="input">
                         <mat-label>Password</mat-label>
                         <input matInput [formControl]='Password' [type]="hide ? 'password' : 'text'">
-                        <div mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <div mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </div>
                         <mat-error *ngIf='Password.invalid'>{{getpasswordError()}}</mat-error>
@@ -25,7 +26,7 @@
 
                 <div class="button">
                     <button [routerLink]="['/register']" class="link">sign in insted</button>
-                    <button type="submit" class="registerbutton" mat-stroked-button (click)="SnackBar()">Login</button>
+                    <button type="submit" class="registerbutton" mat-stroked-button (click)="SnackBar()" [routerLink]="['/dashboard']">Login</button>
                 </div>
             </div>
 

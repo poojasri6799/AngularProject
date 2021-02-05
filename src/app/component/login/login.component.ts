@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   SnackBar(){
     
     this.snackbar.open('logged In','succesfully',{
-      duration:3000
+      duration:1000
       });
   }
 

@@ -33,13 +33,13 @@ export class RegisterComponent implements OnInit {
 
 
   getFirstnameError(){
-    return this.Email.hasError("required")
+    return this.Firstname.hasError("required")
     ?'email is required'
     : 'please enter valid emaill';
  }
 
  getLastnameError(){
-  return this.Email.hasError("required")
+  return this.Lastname.hasError("required")
   ?'email is required'
   : 'please enter valid emaill';
 }
@@ -51,18 +51,18 @@ getEmailError(){
 }
 
 getPhonenoError(){
-  return this.Email.hasError("required")
+  return this.Phoneno.hasError("required")
   ?'email is required'
   : 'please enter valid emaill';
 }
 getGenderError(){
-  return this.Email.hasError("required")
+  return this.Gender.hasError("required")
   ?'email is required'
   : 'please enter valid emaill';
 }
 
 getDobError(){
-  return this.Email.hasError("required")
+  return this.dob.hasError("required")
   ?'email is required'
   : 'please enter valid emaill';
 }

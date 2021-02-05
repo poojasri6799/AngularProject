@@ -1,0 +1,347 @@
+<div>
+    <mat-toolbar class="toolbar">
+        <span class="title">Employee Details</span>
+        <div Class="searchCard" fxLayout="row">
+            <div fxFlex="10">
+                <div mat-icon-button class="searchButton">
+                    <mat-icon class="search">search</mat-icon>
+                    <input matInput placeholder="Search">
+                </div>
+            </div>
+        </div>
+        <span class="settings"></span>
+        <div mat-icon-button [matMenuTriggerFor]="menu">
+            <img class="img" src="../../assets/Images/logout.svg" alt="Avatar">
+        </div>
+        <mat-menu #menu="matMenu" class="menu">
+            <div class="userDetail" style="right: -100%;">
+                <div fxLayout="row wrap" fxLayoutAlign="center">
+                    <img class="img inner" src="../../assets/Images/cloud-account-login-female.png" alt="Avatar ">
+                </div>
+                <div fxLayoutAlign="center" class="name">Pooja</div>
+                <div fxLayoutAlign="center" class="email">Poojasri@quixy.com</div>
+                <div fxLayout="row wrap" fxLayoutAlign="space-evenly" class="button">
+                    <button mat-raised-button color="primary" type="submit " [routerLink]="['/login']" style="
+                background-color: blueviolet;">Logout</button>
+                </div>
+            </div>
+        </mat-menu>
+
+    </mat-toolbar>
+</div>
+
+<body>
+    <div class="main">
+        <form>
+            <div class="container" *ngIf="Show">
+                <div>
+                    <h1 class="header">Personal Details</h1>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="input2" style="margin-right: 20px">
+                        <mat-label>First Name</mat-label>
+                        <input matInput [formControl]='Firstname' placeholder="First Name" required>
+                        <mat-error *ngIf='Firstname.invalid'>
+                            {{getFirstnameError()}}
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="input2">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput [formControl]='Lastname' placeholder="Last Name" required>
+                        <mat-error *ngIf='Lastname.invalid'>
+                            {{getLastnameError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>Email</mat-label>
+                        <input matInput [formControl]='Email' placeholder="Email" required>
+                        <mat-error *ngIf='Email.invalid'>
+                            {{getEmailError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" style="margin-right: 18px; width: 200px">
+                        <mat-label>Phone No</mat-label>
+                        <input matInput [formControl]='Phoneno' placeholder="Phone no" required>
+                        <mat-error *ngIf='Phoneno.invalid'>
+                            {{getPhonenoError()}}
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="input1">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [formControl]=dob [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error *ngIf='dob.invalid'>
+                            {{getDobError()}}
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div style="margin-bottom: 20px">
+                    <mat-radio-group aria-label="Select an option" fxLayout="row" fxLayoutAlign="start">
+                        <h3 style="margin-right: 30px; margin-top: 0px">Gender</h3>
+                        <mat-radio-button value="1">Female</mat-radio-button>
+                        <mat-radio-button value="2">Male</mat-radio-button>
+                        <!-- <mat-error *ngIf='Gender.invalid'>
+                            {{getGenderError()}}
+                        </mat-error> -->
+                    </mat-radio-group>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-between   center">
+                    <button type="submit" class="registerbutton" *ngIf="Show" (click)="IsShow()">Next</button>
+                </div>
+            </div>
+
+            <div class="container" *ngIf="!Show && Watch">
+                <div>
+                    <h1 class="header">Education Details</h1>
+
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" style="margin-right: 15px;">
+                        <mat-label>Degree</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let Degree of Degrees" [value]="Degree.value">
+                                {{Degree.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf='Degree.invalid'>
+                            {{getDegreeError()}}
+                        </mat-error>
+                    </mat-form-field>
+                    <!-- <mat-form-field appearance="outline" class="input1">
+                        <mat-label>Degree</mat-label>
+                        <input matInput [formControl]='Degree' placeholder="Degree" required> -->
+
+                    <!-- </mat-form-field> -->
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Branch</mat-label>
+                        <input matInput [formControl]='Branch' placeholder="Branch" required>
+                        <mat-error *ngIf='Branch.invalid'>
+                            {{getBranchError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>College</mat-label>
+                        <input matInput [formControl]='College' placeholder="College" required>
+                        <mat-error *ngIf='College.invalid'>
+                            {{getCollegeError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>University</mat-label>
+                        <input matInput [formControl]='University' placeholder="University" required>
+                        <mat-error *ngIf='University.invalid'>
+                            {{getUniError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="input1">
+                        <mat-label>Aggregate</mat-label>
+                        <input matInput [formControl]='CGPA' placeholder="CGPA" required>
+                        <mat-error *ngIf='CGPA.invalid'>
+                            {{getAgreegatError()}}
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>YOP</mat-label>
+                        <input matInput [formControl]='YOP' placeholder="Year Of Passing" required>
+                        <mat-error *ngIf='YOP.invalid'>
+                            {{getYOPError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-between   center">
+                    <button type="submit" class="registerbutton" *ngIf="!Show" (click)="IsClick()">Next</button>
+                </div>
+            </div>
+
+            <div class="container" *ngIf="!Watch && details">
+                <h1 class="header">Family Details</h1>
+                <div>
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>FatherName</mat-label>
+                        <input matInput placeholder="FatherName" [formControl]='Fathername' required>
+                        <mat-error *ngIf='Gender.invalid'>
+                            {{getFathernameError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>MotherName</mat-label>
+                        <input matInput [formControl]='Mothername' placeholder="Mothername" required>
+                        <mat-error *ngIf='Gender.invalid'>
+                            {{getMotherError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="input">
+                        <mat-label>Address</mat-label>
+                        <input matInput [formControl]='Address' placeholder="Address" required>
+                        <mat-error *ngIf='Gender.invalid'>
+                            {{getAddressError()}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill" class="name">
+                        <mat-label>Highest Qualification</mat-label>
+                        <mat-select [(value)]="HighestQulification"[(ngModel)]="HighestQulification"
+                            [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let HighestQulification of HighestQulifications "
+                                [value]="HighestQulification">
+                                {{ HighestQulification }}
+                            </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="name">
+                        <mat-label>Specilization</mat-label>
+                        <mat-select [(value)]="Stream" [(ngModel)]="Stream" [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let Stream of Streams" [value]="Stream">{{ Stream }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                
+                <div>
+                    <button type="submit" class="registerbutton" *ngIf="!Watch" (click)="IsDetails()">Next</button>
+                </div>
+           
+            <div class="container" *ngIf="!details">
+                <h1 class="header">Professional Details</h1>
+
+                <mat-radio-group aria-label="Select an option">
+                    <h3>Choose Fresher or Expirence</h3>
+                    <div>
+                        <mat-radio-button (click)="IsGet()" value="1">Fresher</mat-radio-button>
+                        <div>
+                            <div class="container" *ngIf="!Show1 && Watch1">
+                                <div>
+                                    <mat-form-field appearance="fill" class="input1">
+                                        <mat-label>Agreegate</mat-label>
+                                        <input matInput>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>YOP</mat-label>
+                                        <input matInput>
+                                    </mat-form-field>
+
+                                </div>
+                                <div>
+                                    <mat-form-field appearance="fill" class="input1">
+                                        <mat-label>College</mat-label>
+                                        <input matInput>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Technology</mat-label>
+                                        <input matInput>
+                                    </mat-form-field>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <mat-radio-button (click)="IsSet()" value="2">Expirience</mat-radio-button>
+                        <div>
+                            <div class="container" *ngIf="!Watch1 ">
+                                <div>`
+                                    <mat-form-field appearance="fill" class="input1">
+                                        <mat-label>Technical Skills</mat-label>
+                                        <input matInput>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Year of Exp</mat-label>
+                                        <input matInput>
+                                    </mat-form-field>
+
+                                </div>
+                                <div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Previous Company</mat-label>
+                                        <input matInput>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </mat-radio-group>
+
+                <!-- <section class="example-section">
+                    <mat-checkbox class="example-margin" (click)="IsGet()">Freshers</mat-checkbox>
+
+                </section>
+                <div>
+                    <div class="container" *ngIf="!Show1 && Watch1">
+                        <div>
+                            <mat-form-field appearance="fill" class="input1">
+                                <mat-label>Agreegate</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>YOP</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+
+                        </div>
+                        <div>
+                            <mat-form-field appearance="fill" class="input1">
+                                <mat-label>College</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>Technology</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+                </div>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin" (click)="IsSet()">Experice</mat-checkbox>
+
+                </section>
+                <div>
+                    <div class="container" *ngIf="!Watch1 && !Show1">
+                        <div>`
+                            <mat-form-field appearance="fill" class="input1">
+                                <mat-label>Technical Skills</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>Year of Exp</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+
+                        </div>
+                        <div>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Previous Company</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+  
+
