@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  HostListener } from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
 
 
@@ -17,77 +17,18 @@ import {ThemePalette} from '@angular/material/core';
 
 @Component({
   selector: 'app-example',
-  templateUrl: './example.component.html',
+ templateUrl: './example.component.html',
+ //template: 'I am a component!',
   styleUrls: ['./example.component.scss']
 })
 
 
 export class ExampleComponent implements OnInit {
-
-  // private map = new Map<string, string[]>([
-  //   ['Poland', ['Warszawa', 'Krakow']],
-  //   ['USA', ['New York', 'Austin']],
-  // ])
-
-  // country:any;
-  // city: any;
-
-  // get countries(): string[] {
-  //   return Array.from(this.map.keys());
-  // }
-
-  // get cities(): string[] | undefined {
-  //   return this.map.get(this.country);
-  // }
-  
-
-  
-  // city: cities[] = [
-  //   {value: 'steak-0'},
-  //   {value: 'pizza-1'},
-  //   {value: 'tacos-2'}
-  // ];
-
-
-  // states: state[] = [
-  //   {value: 'steak-0'},
-  //   {value: 'pizza-1'},
-  //   {value: 'tacos-2'}
-  // ];
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-  Show1 = true ;
-  IsGet(){
-    if(this.Show1 == true)
-    this.Show1 = false;
-    else
-    this.Show1 = true;
+  Firstname: string = "";   
+  @HostListener('click', ['$event']) // ==> Method Decorator
+  onHostClick(event: Event) {
+     // call when click event triggered
   }
-
-  Watch1 = true;
-  IsSet(){
-    if(this.Watch1 == true)
-    this.Watch1 = false
-    else 
-    this.Watch1 = true
-  }
-
-
-
   constructor() { }
 
   ngOnInit(): void {

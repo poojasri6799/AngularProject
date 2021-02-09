@@ -1,33 +1,9 @@
-<!-- 
-<mat-form-field appearance="fill" style="margin-right: 20px">
-  <mat-label>Degree</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let Degree of Degrees" [value]="Degree.value">
-      {{Degree.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-<mat-form-field appearance="fill">
-    <mat-label>Stream</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let Stream of Streams" [value]="Stream.value">
-        {{Stream.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field> -->
-
-
-    <!-- <select [(ngModel)]="country" style="margin-right: 10px; width: 120px; height: 30px;">
-        <option *ngFor="let country of countries" [value]="country"> {{ country }} </option>
-      </select>
-      
-      <select *ngIf="country" [(ngModel)]="city" [value]="city" style="width: 120px; height: 30px;"> 
-        <option *ngFor="let city of cities"> {{ city }} </option>
-      </select>
-       -->
 
 
 
 
 
+
+<h2>Two-way Binding Example</h2>    
+<input [(ngModel)]="Firstname" /> <br/><br/>    
+<p> {{Firstname}} </p>  

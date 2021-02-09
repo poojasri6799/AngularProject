@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 
-interface Degree {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-employee-info',
   templateUrl: './employee-info.component.html',
@@ -16,12 +11,7 @@ export class EmployeeInfoComponent implements OnInit {
 
   constructor() { }
 
-  Degrees: Degree[] = [
-    {value: 'steak-0', viewValue: 'Btech'},
-    {value: 'pizza-1', viewValue: 'Mtech'},
-    {value: 'tacos-2', viewValue: 'MBA'}
-  ];
-
+ 
   dateClass:MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     if (view==='month') {
     const date=cellDate.getDate();
@@ -36,14 +26,14 @@ export class EmployeeInfoComponent implements OnInit {
 
   Show = true ;
   IsShow(){
-    if(this.Show == true)
-    this.Show = false;
+    // if(this.Show == true)
+    // this.Show = false;
     // else
     // this.Show = true;
-    // if(this.Firstname.valid&& this.Lastname.valid && this.Email.valid && this.Phoneno.valid && this.Gender.valid && this.dob.valid)
-    // {
-    //   this.Show = false;
-    // }
+    if(this.Firstname.valid&& this.Lastname.valid && this.Email.valid && this.Phoneno.valid && this.Gender.valid && this.dob.valid)
+    {
+      this.Show = false;
+    }
     else 
     console.log("success")
   }
@@ -51,17 +41,17 @@ export class EmployeeInfoComponent implements OnInit {
   Watch = true;
 
   IsClick(){
-     if(this.Watch == true){
+     //if(this.Watch == true){
     // this.Watch = false;
-    //if(this.Degree.valid&& this.Branch.valid && this.College.valid && this.University.valid && this.CGPA.valid && this.YOP.valid){
+    if(this.Degree.valid&& this.Branch.valid && this.College.valid && this.University.valid && this.CGPA.valid && this.YOP.valid){
       this.Watch = false;
     }
   }
 
   details = true;
   IsDetails(){
-    if(this.details == true)
-    //if(this.Fathername.valid && this.Mothername.valid && this.Address.valid && this.Pin.valid && this.State.valid)
+    //if(this.details == true)
+    if(this.Fathername.valid && this.Mothername.valid && this.Address.valid && this.Pin.valid && this.State.valid)
     this.details = false;
   }
 

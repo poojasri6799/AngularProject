@@ -11,10 +11,10 @@
         </div>
         <span class="settings"></span>
         <div mat-icon-button [matMenuTriggerFor]="menu">
-            <img class="img" src="../../assets/Images/logout.svg" alt="Avatar">
+            <img class="img" src="../../assets/Images/po.jfif" alt="Avatar" style="margin-left: 180px">
         </div>
         <mat-menu #menu="matMenu" class="menu">
-            <div class="userDetail" style="right: -100%;">
+            <div class="userDetail">
                 <div fxLayout="row wrap" fxLayoutAlign="center">
                     <img class="img inner" src="../../assets/Images/cloud-account-login-female.png" alt="Avatar ">
                 </div>
@@ -22,11 +22,10 @@
                 <div fxLayoutAlign="center" class="email">Poojasri@quixy.com</div>
                 <div fxLayout="row wrap" fxLayoutAlign="space-evenly" class="button">
                     <button mat-raised-button color="primary" type="submit " [routerLink]="['/login']" style="
-                background-color: blueviolet;">Logout</button>
+                background-color: rgb(128, 20, 20);">Logout</button>
                 </div>
             </div>
         </mat-menu>
-
     </mat-toolbar>
 </div>
 
@@ -102,30 +101,27 @@
 
                 </div>
                 <div>
-                    <mat-form-field appearance="outline" style="margin-right: 15px;">
-                        <mat-label>Degree</mat-label>
-                        <mat-select>
-                            <mat-option *ngFor="let Degree of Degrees" [value]="Degree.value">
-                                {{Degree.viewValue}}
+                    <mat-form-field appearance="outline" class="name" style="margin-right: 5px">
+                        <mat-label>Highest Qualification</mat-label>
+                        <mat-select [(value)]="HighestQulification" [(ngModel)]="HighestQulification"
+                            [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let HighestQulification of HighestQulifications "
+                                [value]="HighestQulification">
+                                {{ HighestQulification }}
                             </mat-option>
                         </mat-select>
-                        <mat-error *ngIf='Degree.invalid'>
-                            {{getDegreeError()}}
-                        </mat-error>
                     </mat-form-field>
-                    <!-- <mat-form-field appearance="outline" class="input1">
-                        <mat-label>Degree</mat-label>
-                        <input matInput [formControl]='Degree' placeholder="Degree" required> -->
 
-                    <!-- </mat-form-field> -->
-
-                    <mat-form-field appearance="outline">
-                        <mat-label>Branch</mat-label>
-                        <input matInput [formControl]='Branch' placeholder="Branch" required>
-                        <mat-error *ngIf='Branch.invalid'>
-                            {{getBranchError()}}
-                        </mat-error>
+                    <mat-form-field appearance="outline" class="name">
+                        <mat-label>Specilization</mat-label>
+                        <mat-select [(value)]="Stream" [(ngModel)]="Stream" [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let Stream of Streams" [value]="Stream">{{ Stream }}</mat-option>
+                        </mat-select>
                     </mat-form-field>
+
+                    <div>
+                        <button type="submit" class="registerbutton" *ngIf="!Watch" (click)="IsDetails()">Next</button>
+                    </div>
                 </div>
                 <div>
                     <mat-form-field appearance="outline" class="input">
@@ -196,98 +192,32 @@
                     </mat-form-field>
                 </div>
                 <div>
-                    <mat-form-field appearance="fill" class="name">
-                        <mat-label>Highest Qualification</mat-label>
-                        <mat-select [(value)]="HighestQulification"[(ngModel)]="HighestQulification"
-                            [ngModelOptions]="{standalone: true}">
-                            <mat-option *ngFor="let HighestQulification of HighestQulifications "
-                                [value]="HighestQulification">
-                                {{ HighestQulification }}
-                            </mat-option>
-                            </mat-select>
+                    <mat-form-field appearance="outline" class="input2" style="margin-right: 20px">
+                        <mat-label>State</mat-label>
+                        <input matInput [formControl]='State' placeholder="State" required>
+                        <mat-error *ngIf='State.invalid'>
+                            {{getStateError()}}
+                        </mat-error>
                     </mat-form-field>
 
-                    <mat-form-field appearance="fill" class="name">
-                        <mat-label>Specilization</mat-label>
-                        <mat-select [(value)]="Stream" [(ngModel)]="Stream" [ngModelOptions]="{standalone: true}">
-                            <mat-option *ngFor="let Stream of Streams" [value]="Stream">{{ Stream }}</mat-option>
-                        </mat-select>
+                    <mat-form-field appearance="outline" class="input2">
+                        <mat-label>Pincode</mat-label>
+                        <input matInput [formControl]='Pin' placeholder="Pincode" required>
+                        <mat-error *ngIf='Pin.invalid'>
+                            {{getPinError()}}
+                        </mat-error>
                     </mat-form-field>
-                
+                </div>
                 <div>
                     <button type="submit" class="registerbutton" *ngIf="!Watch" (click)="IsDetails()">Next</button>
                 </div>
-           
+            </div>
+
             <div class="container" *ngIf="!details">
                 <h1 class="header">Professional Details</h1>
-
                 <mat-radio-group aria-label="Select an option">
                     <h3>Choose Fresher or Expirence</h3>
-                    <div>
-                        <mat-radio-button (click)="IsGet()" value="1">Fresher</mat-radio-button>
-                        <div>
-                            <div class="container" *ngIf="!Show1 && Watch1">
-                                <div>
-                                    <mat-form-field appearance="fill" class="input1">
-                                        <mat-label>Agreegate</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>YOP</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-
-                                </div>
-                                <div>
-                                    <mat-form-field appearance="fill" class="input1">
-                                        <mat-label>College</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Technology</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <mat-radio-button (click)="IsSet()" value="2">Expirience</mat-radio-button>
-                        <div>
-                            <div class="container" *ngIf="!Watch1 ">
-                                <div>`
-                                    <mat-form-field appearance="fill" class="input1">
-                                        <mat-label>Technical Skills</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Year of Exp</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-
-                                </div>
-                                <div>
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Previous Company</mat-label>
-                                        <input matInput>
-                                    </mat-form-field>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </mat-radio-group>
-
-                <!-- <section class="example-section">
-                    <mat-checkbox class="example-margin" (click)="IsGet()">Freshers</mat-checkbox>
-
-                </section>
-                <div>
+                    <mat-radio-button (click)="IsGet()" value="1">Fresher</mat-radio-button>
                     <div class="container" *ngIf="!Show1 && Watch1">
                         <div>
                             <mat-form-field appearance="fill" class="input1">
@@ -299,7 +229,6 @@
                                 <mat-label>YOP</mat-label>
                                 <input matInput>
                             </mat-form-field>
-
                         </div>
                         <div>
                             <mat-form-field appearance="fill" class="input1">
@@ -311,37 +240,32 @@
                                 <mat-label>Technology</mat-label>
                                 <input matInput>
                             </mat-form-field>
-
                         </div>
                     </div>
-                </div>
-                <section class="example-section">
-                    <mat-checkbox class="example-margin" (click)="IsSet()">Experice</mat-checkbox>
+                    <div>
+                        <mat-radio-button (click)="IsSet()" value="2">Expirience</mat-radio-button>
+                        <div class="container" *ngIf="!Watch1 ">
+                            <div>`
+                                <mat-form-field appearance="fill" class="input1">
+                                    <mat-label>Technical Skills</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
 
-                </section>
-                <div>
-                    <div class="container" *ngIf="!Watch1 && !Show1">
-                        <div>`
-                            <mat-form-field appearance="fill" class="input1">
-                                <mat-label>Technical Skills</mat-label>
-                                <input matInput>
-                            </mat-form-field>
-
-                            <mat-form-field appearance="fill">
-                                <mat-label>Year of Exp</mat-label>
-                                <input matInput>
-                            </mat-form-field>
-
-                        </div>
-                        <div>
-                            <mat-form-field appearance="fill">
-                                <mat-label>Previous Company</mat-label>
-                                <input matInput>
-                            </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Year of Exp</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Previous Company</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
+                            </div>
                         </div>
                     </div>
-                </div> -->
-
+                </mat-radio-group>
             </div>
-  
-
+        </form>
+    </div>
+</body>

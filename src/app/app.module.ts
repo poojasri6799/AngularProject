@@ -22,7 +22,7 @@ import { ExampleComponent } from './component/example/example.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatTabsModule, MatTab} from '@angular/material/tabs';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -33,6 +33,7 @@ import {MatTabsModule, MatTab} from '@angular/material/tabs';
     LoginComponent,
     EmployeeInfoComponent,
     ExampleComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,8 @@ import {MatTabsModule, MatTab} from '@angular/material/tabs';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    FlexLayoutModule, MatDatepickerModule,
+    FlexLayoutModule, 
+    MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
-import {FormControl, Validators} from '@angular/forms'
+import { FormControl, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-register',
@@ -8,70 +8,74 @@ import {FormControl, Validators} from '@angular/forms'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  dateClass:MatCalendarCellClassFunction<Date> = (cellDate, view) => {
-    if (view==='month') {
-    const date=cellDate.getDate();
-    return (date===1||date===20) ?'example-custom-date-class':'';
-     }
-    return'';
-     }
+  dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
+    if (view === 'month') {
+      const date = cellDate.getDate();
+      return (date === 1 || date === 20) ? 'example-custom-date-class' : '';
+    }
+    return '';
+  }
+
+  title = 'Registration Form';
 
   constructor() { }
 
   ngOnInit(): void {
   }
   hide = true;
-
-  Firstname = new FormControl("",[Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
-  Lastname = new FormControl("",[Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
-  Email = new FormControl("",[Validators.email, Validators.required]);
-  Gender = new FormControl("",[Validators.minLength(6), Validators.required]);
-  dob = new FormControl("",[Validators.minLength(10), Validators.required]);
-  Phoneno = new FormControl("",[Validators.minLength(10), Validators.required]);
-
-  Password = new FormControl('',[Validators.minLength(8),Validators.required]);
+  email : string = "";   
+  pass : string = "";  
 
 
-  getFirstnameError(){
+  Firstname = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
+  Lastname = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
+  Email = new FormControl("", [Validators.email, Validators.required]);
+  Gender = new FormControl("", [Validators.minLength(6), Validators.required]);
+  dob = new FormControl("", [Validators.minLength(10), Validators.required]);
+  Phoneno = new FormControl("", [Validators.minLength(10), Validators.required]);
+  Password = new FormControl('', [Validators.minLength(8), Validators.required]);
+
+
+  getFirstName() {
     return this.Firstname.hasError("required")
-    ?'email is required'
-    : 'please enter valid emaill';
- }
+      ? 'Firstname is required'
+      : 'please enter valid Firstname';
+  }
 
- getLastnameError(){
-  return this.Lastname.hasError("required")
-  ?'email is required'
-  : 'please enter valid emaill';
-}
+  getLastName() {
+    return this.Lastname.hasError("required")
+      ? 'Lastname is required'
+      : 'please enter valid Lastname';
+  }
 
-getEmailError(){
-   return this.Email.hasError("required")
-   ?'email is required'
-   : 'please enter valid emaill';
-}
+  getEmail() {
+    return this.Email.hasError("required")
+      ? 'email is required'
+      : 'please enter valid emaill';
+  }
 
-getPhonenoError(){
-  return this.Phoneno.hasError("required")
-  ?'email is required'
-  : 'please enter valid emaill';
-}
-getGenderError(){
-  return this.Gender.hasError("required")
-  ?'email is required'
-  : 'please enter valid emaill';
-}
+  getPhoneno() {
+    return this.Phoneno.hasError("required")
+      ? 'PhoneNo is required'
+      : 'please enter valid PhoneNo';
+  }
+  getGender() {
+    return this.Gender.hasError("required")
+      ? 'Gender is required'
+      : 'please enter valid Gender';
+  }
 
-getDobError(){
-  return this.dob.hasError("required")
-  ?'email is required'
-  : 'please enter valid emaill';
-}
+  getDob() {
+    return this.dob.hasError("required")
+      ? 'Dob is required'
+      : 'please enter valid Dob';
+  }
 
-getPasswordError(){
-  return this.Password.hasError("required")
-  ?'Password is required'
-  : 'please enter valid password';
-}
+  getPassword() {
+    return this.Password.hasError("required")
+      ? 'Password is required'
+      : 'please enter valid password';
+  }
 
 
 }

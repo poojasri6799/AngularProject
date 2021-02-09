@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms'
-import {MatSnackBar} from '@angular/material/snack-bar'
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms'
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-login',
@@ -9,32 +14,39 @@ import {MatSnackBar} from '@angular/material/snack-bar'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private snackbar:MatSnackBar) { }
-
-  SnackBar(){
-    
-    this.snackbar.open('logged In','succesfully',{
-      duration:1000
-      });
+  constructor(private snackBar: MatSnackBar) { }
+ 
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  openSnackBar() {
+    this.snackBar.open('Logged In', 'succesfully', {
+      duration: 500,
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    });
   }
+
+  title = 'Login';
+  @Input() email : string = ""; 
+  pass : string = "";   
 
   ngOnInit(): void {
   }
-hide = true
+  hide = true
 
-Email = new FormControl("",[Validators.email, Validators.required]);
+  Email = new FormControl("", [Validators.email, Validators.required]);
 
-Password = new FormControl('',[Validators.minLength(8),Validators.required]);
+  Password = new FormControl('', [Validators.minLength(8), Validators.required]);
 
-getEmailError(){
-   return this.Email.hasError("required")
-   ?'email is required'
-   : 'please enter valid emaill';
-}
+  getEmail() {
+    return this.Email.hasError("required")
+      ? 'email is required'
+      : 'please enter valid emaill';
+  }
 
-getpasswordError(){
-  return this.Password.hasError("required")
-  ?'Password is required'
-  : 'please enter valid password';
-}
+  getPassword() {
+    return this.Password.hasError("required")
+      ? 'Password is required'
+      : 'please enter valid password';
+  }
 }

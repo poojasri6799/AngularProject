@@ -5,6 +5,7 @@ import { LoginComponent } from './component/login/login.component';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import { ExampleComponent } from './component/example/example.component';
 
+
 const routes: Routes = [
   {
     path:'register', component:RegisterComponent
@@ -18,6 +19,7 @@ const routes: Routes = [
   {
     path:'exp', component:ExampleComponent
   }
+ 
 ];
 
 @NgModule({
