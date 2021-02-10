@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
-import { FormControl, Validators } from '@angular/forms'
+import { FormControl, Validators } from '@angular/forms';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   title = 'Registration Form';
 
-  constructor() { }
+  constructor(private user:UserService) { }
 
   ngOnInit(): void {
   }
@@ -77,5 +78,9 @@ export class RegisterComponent implements OnInit {
       : 'please enter valid password';
   }
 
-
+  isClick() {
+    if (this.Firstname.valid&& this.Lastname.valid&&this.Email.valid && this.Password.valid && this.dob.valid&& this.Gender.valid&& this.Phoneno.valid) {
+      this.user.getSnackBarMsg("User Registration");
+    }
+  }
 }

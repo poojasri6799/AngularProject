@@ -1,10 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms'
-import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
-} from '@angular/material/snack-bar';
+import { FormControl, Validators } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+
+
 
 
 @Component({
@@ -14,21 +12,14 @@ import {
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private snackBar: MatSnackBar) { }
- 
-  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
-  openSnackBar() {
-    this.snackBar.open('Logged In', 'succesfully', {
-      duration: 500,
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
-  }
+  constructor(private user: UserService) { }
+
+
+
 
   title = 'Login';
-  @Input() email : string = ""; 
-  pass : string = "";   
+  @Input() email: string = "";
+  pass: string = "";
 
   ngOnInit(): void {
   }
@@ -48,5 +39,12 @@ export class LoginComponent implements OnInit {
     return this.Password.hasError("required")
       ? 'Password is required'
       : 'please enter valid password';
+  }
+
+  isClick() {
+    if (this.Email.valid && this.Password.valid) {
+      this.user.getSnackBarMsg("User Login");
+      this.user.navigate();
+    }
   }
 }
