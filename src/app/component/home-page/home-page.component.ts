@@ -13,19 +13,20 @@ export class HomePageComponent implements OnInit {
   }
   hello:any = [
     {
-      name :'Pooja', Exp: '10'
+      name :'Saritha',Specialized : 'Cardiologist' ,Exp: '10', image : '../../../assets/Images/doc6.jfif'
     },
     {
-      name :'Radha', Exp: '11'
+      name :'Radha', Specialized : 'Gynaecologist' , Exp: '8',  image :'../../../assets/Images/female1.jfif'
     },
     {
-      name :'Pooja', Exp: '10'
+      name :'Amit',  Specialized : 'Dentist' , Exp: '13', image : '../../../assets/Images/maledoc.jfif'
+    }, 
+    {
+      name :'Chandini',  Specialized : 'ENT specialist' , Exp: '7', image : '../../../assets/Images/doctor.jfif'
     },
     {
-      name :'Pooja', Exp: '10'
-    },
-    {
-      name :'Pooja', Exp: '10'
+      
+      name :'Jhons', Specialized : 'Dermatologist' , Exp: '12', image : '../../../assets/Images/male2.jfif'
     }
   ];
   
