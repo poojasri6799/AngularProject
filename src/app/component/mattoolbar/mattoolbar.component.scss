@@ -1,0 +1,44 @@
+.toolbar{
+    background: rgb(158, 13, 13);
+    padding: 0%;
+    width: 100%;
+    min-width: 800px;
+    overflow:auto;
+}
+
+.title{
+    color: white;
+    margin-left: 5%;
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.searchCard{
+    width:35%;
+    background: #ffff;
+    margin-left: 30%;
+    border-radius: 5px;
+
+}
+
+.search{
+    color:  rgb(17, 16, 16);
+
+
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  .settings {
+    flex: 0.25  auto;
+}
+.img {
+    border-radius: 50%;
+  }
+
+//   .searchButton{
+//       background: blue;
+//   }

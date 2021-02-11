@@ -18,11 +18,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { ExampleComponent } from './component/example/example.component';
+
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MattoolbarComponent } from './component/mattoolbar/mattoolbar.component';
+import { HomePageComponent } from './component/home-page/home-page.component';
+import { PracticeComponent } from './component/practice/practice.component';
 
 
 
@@ -32,7 +35,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     RegisterComponent,
     LoginComponent,
     EmployeeInfoComponent,
-    ExampleComponent
+    
+    MattoolbarComponent,
+    HomePageComponent,
+    PracticeComponent
    
   ],
   imports: [

@@ -1,0 +1,30 @@
+<!-- <h4>NgFor (grouped)</h4>
+ <ul *ngFor="let group of peopleByCountry"> (1)
+   <li>{{ group.country }}</li>
+   <ul>
+    <li *ngFor="let person of group.people"> (2)
+      {{ person.name }}
+    </li>
+   </ul>
+ </ul> -->
+
+ <body>
+        <div class="title">
+            <h5 class="fontSize">Doctors List and Details</h5>
+        </div>
+        <div class="main" *ngFor="let person of hello">
+    
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <img src="../../../assets/Images/doc6.jfif">
+                <div fxLayout="column" fxLayoutAlign="start start" class="details">
+                    <div class="name" style="margin-bottom: 10px">{{person.name}}</div>
+                   
+                    <div>{{person.Exp}}</div>
+                </div>
+            </div>
+            <div class="ButtonDiv">
+                <button mat-stroked-button color="primary" class="ff">Book Appointment</button>
+            </div>
+        </div>
+    
+    </body>

@@ -2,9 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 
-
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,9 +10,6 @@ import { UserService } from '../../services/user.service';
 export class LoginComponent implements OnInit {
 
   constructor(private user: UserService) { }
-
-
-
 
   title = 'Login';
   @Input() email: string = "";

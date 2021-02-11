@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
   }
   hide = true;
   email : string = "";   
-  pass : string = "";  
+  pass : string = ""; 
 
 
   Firstname = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);

@@ -1,0 +1,31 @@
+<div>
+    <mat-toolbar class="toolbar">
+        <span class="title">Quixy</span>
+        <div Class="searchCard" fxLayout="row">
+            <div fxFlex="10">
+                <div mat-icon-button class="searchButton">
+                    <mat-icon class="search" style="margin-top: 5px">search</mat-icon>
+                    <input matInput placeholder="Search" style="border: none">
+                </div>
+            </div>
+        </div>
+        <span class="settings"></span>
+        <div mat-icon-button [matMenuTriggerFor]="menu">
+            <img class="img" src="../../assets/Images/po.jfif" alt="Avatar" style="margin-left: 180px">
+        </div>
+        <mat-menu #menu="matMenu" class="menu">
+            <div class="userDetail">
+                <div fxLayout="row wrap" fxLayoutAlign="center">
+                    <img class="img inner" src="../../assets/Images/cloud-account-login-female.png" alt="Avatar ">
+                </div>
+                <div fxLayoutAlign="center" class="name">Pooja</div>
+                <div fxLayoutAlign="center" class="email">Poojasri@quixy.com</div>
+                <div fxLayout="row wrap" fxLayoutAlign="space-evenly" class="button">
+                    <button mat-raised-button color="primary" type="submit " [routerLink]="['/login']" style="
+                background-color: rgb(128, 20, 20);">Logout</button>
+                </div>
+            </div>
+        </mat-menu>
+    </mat-toolbar>
+</div>
+

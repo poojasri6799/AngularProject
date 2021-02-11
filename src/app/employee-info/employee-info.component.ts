@@ -64,22 +64,6 @@ export class EmployeeInfoComponent implements OnInit {
       this.Watch1 = true
   }
 
-  // private map = new Map<string, string[]>([
-  //   ['Poland', ['Warszawa', 'Krakow']],
-  //   ['USA', ['New York', 'Austin']],
-  // ])
-
-  // country:any;
-  // city: any;
-
-  // get countries(): string[] {
-  //   return Array.from(this.map.keys());
-  // }
-
-  // get cities(): string[] | undefined {
-  //   return this.map.get(this.country);
-  // }
-
   Firstname = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
   Lastname = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
   Email = new FormControl("", [Validators.email, Validators.required]);
@@ -108,7 +92,7 @@ export class EmployeeInfoComponent implements OnInit {
   College = new FormControl('', [Validators.minLength(5), Validators.required]);
   University = new FormControl('', [Validators.minLength(5), Validators.required]);
   CGPA = new FormControl('', [Validators.minLength(5), Validators.required]);
-  YOP = new FormControl('', [Validators.minLength(10), Validators.required]);
+  YOP = new FormControl('', [Validators.minLength(5), Validators.required]);
 
   Fathername = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
   Mothername = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
