@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,36 +11,36 @@ import { UserService } from '../../services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private user: UserService) { }
-
   title = 'Login';
-  @Input() email: string = "";
-  pass: string = "";
-
+  @Input() email: any;
+  @Input() password: any;
+  hide = true;
+  form: any;
+  constructor(private formBuilder: FormBuilder, private route: Router, private snackbar: MatSnackBar, private user: UserService) { }
+  snackbarMeaasge() {
+    this.snackbar.open('logged In', 'successfully', {
+      duration: 1500
+    });
+  }
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
   }
-  hide = true
-
-  Email = new FormControl("", [Validators.email, Validators.required]);
-
-  Password = new FormControl('', [Validators.minLength(8), Validators.required]);
-
-  getEmail() {
-    return this.Email.hasError("required")
-      ? 'email is required'
-      : 'please enter valid emaill';
+  public hasError = (controlName: string, errorName: string) => {
+    return this.form.controls[controlName].hasError(errorName);
   }
+  login(formValues: any) {
+    let data = {
+      email: formValues.email,
+      password: formValues.password
+    }
+    if (this.form.valid) {
+      console.log(data);
+      this.user.login(data);
+      this.route.navigate(['/doctor'])
 
-  getPassword() {
-    return this.Password.hasError("required")
-      ? 'Password is required'
-      : 'please enter valid password';
-  }
-
-  isClick() {
-    if (this.Email.valid && this.Password.valid) {
-      this.user.getSnackBarMsg("User Login");
-      this.user.navigate();
     }
   }
 }

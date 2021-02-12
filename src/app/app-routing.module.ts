@@ -7,6 +7,9 @@ import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import { MattoolbarComponent } from './component/mattoolbar/mattoolbar.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
 import { PracticeComponent } from './component/practice/practice.component';
+import { AppointmentComponent } from './component/appointment/appointment.component';
+import { PatientComponent } from './component/patient/patient.component';
+import { AdminComponent } from './component/admin/admin.component';
 
 
 const routes: Routes = [
@@ -24,7 +27,17 @@ const routes: Routes = [
   },
   {
     path:'doctor', component:HomePageComponent
-  }
+  },
+  {
+    path:'appointment', component: AppointmentComponent
+  },
+  {
+    path:'patient', component: PatientComponent
+  },
+  {
+    path:'admin', component: AdminComponent
+  },
+
  
 ];
 

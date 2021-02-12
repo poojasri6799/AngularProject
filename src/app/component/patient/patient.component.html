@@ -1,0 +1,30 @@
+<app-mattoolbar></app-mattoolbar>
+<div class="background">
+    <div class="title">
+        <h5 class="fontSize">Patient Details</h5>
+    </div>
+    <div class="main">
+        <div style="margin-left: 10px">
+            <div fxLayout="column" fxLayoutAlign="center start" style="margin-top: 20px">
+                <mat-label class="message">Name</mat-label>
+                <input appearance="outline" class="setting" placeholder="Name" [(ngModel)]='name'>
+                <p>{{name}}</p>
+            </div>
+            <div fxLayout="column" fxLayoutAlign="center start">
+                <mat-label class="message">Age</mat-label>
+                <input appearance="outline" class="setting" placeholder="Age">
+            </div>
+            <div fxLayout="column" fxLayoutAlign="center start">
+                <mat-label class="message">Phone no</mat-label>
+                <input appearance="outline" class="setting" placeholder="Number">
+            </div>
+            <div fxLayout="column" fxLayoutAlign="center start">
+                <mat-label class="message">Message</mat-label>
+                <input appearance="outline" class="setting1" placeholder="Message">
+            </div>
+        </div>
+        <div class="ButtonDiv">
+            <button mat-stroked-button color="primary" class="ff" (click)="isClick()">Confirm</button>
+        </div>
+    </div>
+</div>

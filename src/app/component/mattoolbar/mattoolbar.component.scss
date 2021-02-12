@@ -31,14 +31,19 @@
 
 .mat-radio-button ~ .mat-radio-button {
     margin-left: 16px;
-  }
-  .settings {
+}
+.settings {
     flex: 0.25  auto;
 }
 .img {
     border-radius: 50%;
-  }
+}
 
-//   .searchButton{
-//       background: blue;
-//   }
+.searchtext{
+    margin-top: 5px;
+    border: none;
+}
+
+.searchtext:focus{
+    outline: none
+}

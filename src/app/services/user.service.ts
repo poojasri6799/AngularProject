@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {
   MatSnackBar,
@@ -14,11 +13,14 @@ import {
 })
 export class UserService {
   constructor(private snackBar: MatSnackBar, private route: Router) { }
-  
-  navigate() {
-    console.log("Form valid, route to dashboard")
-    this.route.navigate(['/dashboard'])
-  }
+
+  login(data:any) {
+    data = {
+     email: "pooja@gmail.com",
+     password: "Pooja@123"
+   }
+   return data;
+ }
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';

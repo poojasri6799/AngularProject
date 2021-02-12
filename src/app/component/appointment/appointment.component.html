@@ -1,0 +1,52 @@
+<app-mattoolbar></app-mattoolbar>
+<div class="background">
+    <div class="title">
+        <h5 class="fontSize">Doctors Profile</h5>
+    </div>
+    <div class="main">
+        <div>
+            <div>
+                <mat-form-field appearance="fill" class="setting">
+                    <mat-label>Name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" class="setting">
+                    <mat-label>Hospital Name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" class="setting">
+                    <mat-label>Specialist</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" class="setting">
+                    <mat-label>Expirence</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" class="setting">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" class="setting">
+                    <mat-label>Timing</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="ButtonDiv">
+            <button mat-stroked-button color="primary" class="ff" [routerLink]="['/patient']">Continue</button>
+        </div>
+
+    </div>
+</div>

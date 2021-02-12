@@ -1,37 +1,29 @@
-<body>
+<body class="backround">
+    <app-mattoolbar></app-mattoolbar>
     <div class="main">
-        <form style="width: 100%">
-            <h1 class="header">{{title}}</h1>
-            <div class="container">
-                <div>
-                    <mat-form-field appearance="outline" class="input">
-                        <mat-label>Email</mat-label>
-                        <input matInput [formControl]='Email' placeholder="Email" [(ngModel)]='email' required>
-                        <mat-error *ngIf='Email.invalid'>
-                            {{getEmail()}}
-                        </mat-error>
-                    </mat-form-field>
-                    <p> {{email}} </p>  
-                </div>
-                <div>
-                    <mat-form-field appearance="outline" class="input">
-                        <mat-label>Password</mat-label>
-                        <input matInput [formControl]='Password' [(ngModel)]='pass' [type]="hide ? 'password' : 'text'">
-                        <div mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                            [attr.aria-pressed]="hide">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </div>
-                        <mat-error *ngIf='Password.invalid'>{{getPassword()}}</mat-error>
-                    </mat-form-field>
-                    <p> {{pass}} </p> 
-                </div>
+        <form [formGroup]="form" autocomplete="off" novalidate (ngSubmit)="login(form.value)">
+            <div class="header"> LOGIN </div>
+            <div>
+                <mat-form-field appearance="outline" class="input">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" formControlName="email" required [(ngModel)]="email">
+                    <mat-error *ngIf="hasError('email','required')">email is required</mat-error>
 
-                <div class="button" >
-                    <button [routerLink]="['/register']" class="link">sign in insted</button>
-                    <button type="submit" class="registerbutton" mat-stroked-button (click)="isClick()">Login</button>
-                </div>
+                </mat-form-field>
+                <p> {{email}} </p>
             </div>
-
+            <div>
+                <mat-form-field appearance="outline" class="input">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <mat-error *ngIf="hasError('password','required')">password is required</mat-error>
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </div>
+            <div>
+                <button [routerLink]="['/register']" class="link">Create Account here</button>
+                <button type="submit" class="loginbutton" (click)="snackbarMeaasge()"> LOGIN </button>
+            </div>
         </form>
     </div>
 </body>

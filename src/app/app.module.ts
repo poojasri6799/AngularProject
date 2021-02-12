@@ -7,7 +7,6 @@ import { RegisterComponent } from './component/register/register.component';
 import { LoginComponent } from './component/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
-//import { MatCardModule } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -18,7 +17,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
@@ -26,8 +24,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MattoolbarComponent } from './component/mattoolbar/mattoolbar.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
 import { PracticeComponent } from './component/practice/practice.component';
-
-
+import { AppointmentComponent } from './component/appointment/appointment.component';
+import { PatientComponent } from './component/patient/patient.component';
+import { AdminComponent } from './component/admin/admin.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -38,7 +38,10 @@ import { PracticeComponent } from './component/practice/practice.component';
     
     MattoolbarComponent,
     HomePageComponent,
-    PracticeComponent
+    PracticeComponent,
+    AppointmentComponent,
+    PatientComponent,
+    AdminComponent
    
   ],
   imports: [
@@ -60,6 +63,7 @@ import { PracticeComponent } from './component/practice/practice.component';
     MatSelectModule,
     MatMenuModule,
     MatTabsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

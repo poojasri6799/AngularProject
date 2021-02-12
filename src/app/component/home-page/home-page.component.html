@@ -1,26 +1,21 @@
 <app-mattoolbar></app-mattoolbar>
 <div class="background">
-<div class="title">
-    <h5 class="fontSize">Doctors List and Details</h5>
-</div>
-
-<div style="display: flex;flex-direction: row; flex-wrap: wrap;">
-
-    <div class="main" *ngFor="let person of hello">
-
-        <div fxLayout="row" fxLayoutAlign="start start">
-            <!-- <img src="../../../assets/Images/pic4.jpg"> -->
-            <img src="{{person.image}}">
-            <div fxLayout="column" fxLayoutAlign="start start" class="details">
-                <div class="name" style="margin-bottom: 10px">Name : {{person.name}} </div>
-                <div style="margin-bottom: 10px"> Specialized : {{person.Specialized}}</div>
-                <div>Exp : {{person.Exp}}</div>
+    <div class="title">
+        <h5 class="fontSize">Doctors List and Details</h5>
+    </div>
+    <div style="display: flex;flex-direction: row; flex-wrap: wrap;">
+        <div class="main" *ngFor="let person of hello">
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <img src="{{person.image}}">
+                <div fxLayout="column" fxLayoutAlign="start start" class="details">
+                    <div class="name" style="margin-bottom: 10px">Name : {{person.name}} </div>
+                    <div style="margin-bottom: 10px"> Specialized : {{person.Specialized}}</div>
+                    <div>Experience : {{person.Exp}}</div>
+                </div>
+            </div>
+            <div class="ButtonDiv">
+                <button mat-stroked-button color="primary" class="ff" [routerLink]="['/appointment']">Book Appointment</button>
             </div>
         </div>
-        <div class="ButtonDiv">
-            <button mat-stroked-button color="primary" class="ff">Book Appointment</button>
-        </div>
-
     </div>
-</div>
 </div>
