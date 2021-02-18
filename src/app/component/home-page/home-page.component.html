@@ -4,11 +4,11 @@
         <h5 class="fontSize">Doctors List and Details</h5>
     </div>
     <div style="display: flex;flex-direction: row; flex-wrap: wrap;">
-        <div class="main" *ngFor="let person of hello">
+        <div class="main" *ngFor="let person of doctor">
             <div fxLayout="row" fxLayoutAlign="start start">
-                <img src="{{person.image}}">
+                <img src="{{person.Image}}">
                 <div fxLayout="column" fxLayoutAlign="start start" class="details">
-                    <div class="name" style="margin-bottom: 10px">Name : {{person.name}} </div>
+                    <div class="name" style="margin-bottom: 10px">Name : {{person.Name}} </div>
                     <div style="margin-bottom: 10px"> Specialized : {{person.Specialized}}</div>
                     <div>Experience : {{person.Exp}}</div>
                 </div>

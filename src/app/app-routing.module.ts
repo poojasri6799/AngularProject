@@ -10,7 +10,7 @@ import { PracticeComponent } from './component/practice/practice.component';
 import { AppointmentComponent } from './component/appointment/appointment.component';
 import { PatientComponent } from './component/patient/patient.component';
 import { AdminComponent } from './component/admin/admin.component';
-
+import { AuthguardGuard } from "../app/authguard/authguard.guard"
 
 const routes: Routes = [
   {
@@ -26,7 +26,7 @@ const routes: Routes = [
     path:'exp', component:PracticeComponent
   },
   {
-    path:'doctor', component:HomePageComponent
+    path:'doctor', component:HomePageComponent, canActivate: [AuthguardGuard]
   },
   {
     path:'appointment', component: AppointmentComponent
@@ -35,7 +35,7 @@ const routes: Routes = [
     path:'patient', component: PatientComponent
   },
   {
-    path:'admin', component: AdminComponent
+    path:'admin', component: AdminComponent,  canActivate: [AuthguardGuard]
   },
 
  

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   MatSnackBar,
-  MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 
@@ -22,13 +21,11 @@ export class UserService {
    return data;
  }
 
-  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   getSnackBarMsg(message: any) {
-    this.snackBar.open(message, 'success', {
-      duration: 500,
-      horizontalPosition: this.horizontalPosition,
+    this.snackBar.open(message, 'successfully', {
+      duration: 1500,
       verticalPosition: this.verticalPosition,
     });
   }

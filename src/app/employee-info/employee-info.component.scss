@@ -7,13 +7,10 @@
     margin-right: 16px;
 }
 .input2{
-    //margin-right: 40px;
     width: 47%
 }
 
 .container{
-    //background: red;
-    //margin-left: 75px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -27,8 +24,7 @@ body{
     align-items: center;
     background-image: url("../../assets/Images/bg1.jpg");
     background-repeat: no-repeat;
-    //background-size: 2000px 3000px;
-    //margin-top: 10%;
+    
 }
 
 
@@ -49,7 +45,7 @@ body{
     justify-content: center;
     width: 30%;
     height: 50%;
-    //margin-left: 50px;
+    
     border: 1px solid rgb(10, 2, 2);
     border-radius: 10px;
     border-color: rgb(128, 20, 20);
@@ -107,12 +103,21 @@ body{
 
 .mat-radio-button ~ .mat-radio-button {
     margin-left: 16px;
-  }
+}
   .settings {
     flex: 0.25  auto;
 }
 .img {
     border-radius: 50%;
-  }
+}
+
+.submitButton{
+    padding: 10px 0px 10px 0px;
+    background-color: rgb(158, 13, 13);
+    border-radius: 7px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+}
 
 

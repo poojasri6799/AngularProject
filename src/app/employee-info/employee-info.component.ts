@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { UserService } from '../../app/services/user.service';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 
 @Component({
@@ -9,9 +10,7 @@ import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 })
 export class EmployeeInfoComponent implements OnInit {
 
-  constructor() { }
-
-
+  constructor(private user:UserService) {}
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     if (view === 'month') {
       const date = cellDate.getDate();
@@ -25,43 +24,47 @@ export class EmployeeInfoComponent implements OnInit {
   hide = true;
 
   Show = true;
-  IsShow() {
-    if (this.Firstname.valid && this.Lastname.valid && this.Email.valid && this.Phoneno.valid && this.Gender.valid && this.dob.valid) {
+  isPersonDetails() {
+  if (this.Firstname.valid && this.Lastname.valid && this.Email.valid && this.Phoneno.valid && this.dob.valid) 
       this.Show = false;
-    }
-    else
+   else
       console.log("success")
   }
 
   Watch = true;
-
-  IsClick() {
-   
-    if (this.Degree.valid && this.Branch.valid && this.College.valid && this.University.valid && this.CGPA.valid && this.YOP.valid) {
+  educationDeatils() {
+    if (this.College.valid && this.University.valid)
       this.Watch = false;
-    }
+    else 
+      this.Watch = true;
   }
 
   details = true;
-  IsDetails() {
+  familyDetails() {
     if (this.Fathername.valid && this.Mothername.valid && this.Address.valid && this.Pin.valid && this.State.valid)
       this.details = false;
+    else 
+      this.details = true;
   }
 
-  Show1 = true;
-  IsGet() {
-    if (this.Show1 == true)
-      this.Show1 = false;
+  fresher = true;
+  isGet() {
+    if (this.fresher == true)
+      this.fresher = false;
     else
-      this.Show1 = true;
+      this.fresher = true;
   }
 
-  Watch1 = true;
-  IsSet() {
-    if (this.Watch1 == true)
-      this.Watch1 = false
+  experience = true;
+  isSet() {
+    if (this.experience == true)
+      this.experience = false
     else
-      this.Watch1 = true
+      this.experience = true
+  }
+
+  submitDetails(){
+    this.user.getSnackBarMsg("User Details Submitted");
   }
 
   Firstname = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
@@ -72,7 +75,7 @@ export class EmployeeInfoComponent implements OnInit {
   Phoneno = new FormControl("", [Validators.minLength(10), Validators.required]);
 
   private map = new Map<string, string[]>([
-    ['B-Tech', ['ENTC', 'Instrumentation', 'Mechanical', 'Electrical']],
+    ['B-Tech', ['CSC', 'EEE', 'Mechanical', 'Electrical']],
     ['MBA', ['Finance', 'Marketing', 'HR']],
     ['M-TECH', ['CAD', 'CAM', 'Electronics', 'Civil']],
     ['BBA', ['BBA1', 'BBA2', 'BBA3', 'BBA4']],
@@ -87,12 +90,12 @@ export class EmployeeInfoComponent implements OnInit {
     return this.map.get(this.HighestQulification);
   }
 
-  Degree = new FormControl('', [Validators.minLength(5), Validators.required]);
-  Branch = new FormControl('', [Validators.minLength(5), Validators.required]);
-  College = new FormControl('', [Validators.minLength(5), Validators.required]);
-  University = new FormControl('', [Validators.minLength(5), Validators.required]);
-  CGPA = new FormControl('', [Validators.minLength(5), Validators.required]);
-  YOP = new FormControl('', [Validators.minLength(5), Validators.required]);
+  Degree = new FormControl('', [Validators.minLength(3), Validators.required]);
+  Branch = new FormControl('', [Validators.minLength(3), Validators.required]);
+  College = new FormControl('', [Validators.minLength(3), Validators.required]);
+  University = new FormControl('', [Validators.minLength(3), Validators.required]);
+  CGPA = new FormControl('', [Validators.minLength(2), Validators.required]);
+  YOP = new FormControl('', [Validators.minLength(2), Validators.required]);
 
   Fathername = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);
   Mothername = new FormControl("", [Validators.pattern('[a-zA-Z]{2,}'), Validators.required]);

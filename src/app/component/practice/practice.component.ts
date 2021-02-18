@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ChangeDetectorRef, DoCheck } from '@angular/core';
+
 
 @Component({
   selector: 'app-practice',
@@ -6,33 +7,90 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./practice.component.scss']
 })
 
+export class PracticeComponent implements DoCheck, OnInit, OnChanges {
 
+  title = 'Quixy';
 
-export class PracticeComponent implements OnInit {
- 
+  public obj: any = {
+    changer: 1
+  };
 
-  constructor() { }
+  private _oldValue: number = 1;
 
-  ngOnInit(): void {
+  constructor(private _changeRef: ChangeDetectorRef) { alert("1. on changes called"); }
+
+  ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
   }
 
+  ngOnInit(): void {
+    setInterval(() => {
+      this.obj.changer += 1;
+    }, 1000);
 
-   hello:any = [
+
+  }
+
+  ngDoCheck(): void {
+    if (this._oldValue !== this.obj.changer) {
+      this._oldValue = this.obj.changer;
+
+      //disable this line to see the counter not moving
+      this._changeRef.detectChanges();
+    }
+  }
+
+  doctor: any = [
     {
-      name :'Pooja', Exp: '10'
+      name: 'Saritha', Specialized: 'Cardiologist', Exp: '10', image: '../../../assets/Images/doc6.jfif'
     },
     {
-      name :'Radha', Exp: '11'
+      name: 'Radha', Specialized: 'Gynaecologist', Exp: '8', image: '../../../assets/Images/female1.jfif'
     },
     {
-      name :'Pooja', Exp: '10'
+      name: 'Amit', Specialized: 'Dentist', Exp: '13', image: '../../../assets/Images/maledoc.jfif'
     },
     {
-      name :'Pooja', Exp: '10'
+      name: 'Chandini', Specialized: 'ENT specialist', Exp: '7', image: '../../../assets/Images/doctor.jfif'
     },
     {
-      name :'Pooja', Exp: '10'
+      name: 'Jhons', Specialized: 'Dermatologist', Exp: '12', image: '../../../assets/Images/male2.jfif'
     }
   ];
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //  hello:any = [
+  //   {
+  //     name :'Pooja', Exp: '10'
+  //   },
+  //   {
+  //     name :'Radha', Exp: '11'
+  //   },
+  //   {
+  //     name :'Pooja', Exp: '10'
+  //   },
+  //   {
+  //     name :'Pooja', Exp: '10'
+  //   },
+  //   {
+  //     name :'Pooja', Exp: '10'
+  //   }
+  // ];
+
 }

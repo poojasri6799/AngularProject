@@ -1,10 +1,32 @@
-[{
+[
+  {
     "Name": "Saritha",
     "Specialized": "Cardiologist",
-    "Experience": "10"
+    "Experience": "10",
+    "Image" : "../../../assets/Images/doc6.jfif"
   },
   {
     "Name": "Radha",
     "Specialized": "Gynaecologist",
-    "Experience": "8"
-  }]
+    "Experience": "8",
+    "Image" : "../../../assets/Images/female1.jfif"
+  },
+  {
+    "Name": "Amit",
+    "Specialized": "Dentist",
+    "Experience": "13",
+    "Image" : "../../../assets/Images/maledoc.jfif"
+  },
+  {
+    "Name": "Chandini",
+    "Specialized": "ENT specialist",
+    "Experience": "7",
+    "Image" : "../../../assets/Images/doctor.jfif"
+  },
+  {
+    "Name": "Jhons",
+    "Specialized": "Dermatologist",
+    "Experience": "12",
+    "Image" : "../../../assets/Images/male2.jfif"
+  }
+]

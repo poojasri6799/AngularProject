@@ -28,6 +28,7 @@ import { AppointmentComponent } from './component/appointment/appointment.compon
 import { PatientComponent } from './component/patient/patient.component';
 import { AdminComponent } from './component/admin/admin.component';
 import { HttpClientModule } from "@angular/common/http";
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -35,14 +36,12 @@ import { HttpClientModule } from "@angular/common/http";
     RegisterComponent,
     LoginComponent,
     EmployeeInfoComponent,
-    
     MattoolbarComponent,
     HomePageComponent,
     PracticeComponent,
     AppointmentComponent,
     PatientComponent,
     AdminComponent
-   
   ],
   imports: [
     BrowserModule,
@@ -63,7 +62,8 @@ import { HttpClientModule } from "@angular/common/http";
     MatSelectModule,
     MatMenuModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

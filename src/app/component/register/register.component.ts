@@ -78,7 +78,7 @@ export class RegisterComponent implements OnInit {
       : 'please enter valid password';
   }
 
-  isClick() {
+  isRegister() {
     if (this.Firstname.valid&& this.Lastname.valid&&this.Email.valid && this.Password.valid && this.dob.valid&& this.Gender.valid&& this.Phoneno.valid) {
       this.user.getSnackBarMsg("User Registration");
     }

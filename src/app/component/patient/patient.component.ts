@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -8,7 +8,10 @@ import { UserService } from '../../services/user.service';
 })
 export class PatientComponent implements OnInit {
 
-  constructor(private user: UserService) { }
+
+  constructor(private user: UserService) {
+
+  }
   @Input() name: string = "";
 
   ngOnInit(): void {

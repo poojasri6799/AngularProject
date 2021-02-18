@@ -86,13 +86,10 @@
                         <h3 style="margin-right: 30px; margin-top: 0px">Gender</h3>
                         <mat-radio-button value="1">Female</mat-radio-button>
                         <mat-radio-button value="2">Male</mat-radio-button>
-                        <!-- <mat-error *ngIf='Gender.invalid'>
-                            {{getGenderError()}}
-                        </mat-error> -->
                     </mat-radio-group>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="space-between   center">
-                    <button type="submit" class="registerbutton" *ngIf="Show" (click)="IsShow()">Next</button>
+                    <button type="submit" class="registerbutton" *ngIf="Show" (click)="isPersonDetails()">Next</button>
                 </div>
             </div>
 
@@ -119,10 +116,6 @@
                             <mat-option *ngFor="let Stream of Streams" [value]="Stream">{{ Stream }}</mat-option>
                         </mat-select>
                     </mat-form-field>
-
-                    <div>
-                        <button type="submit" class="registerbutton" *ngIf="!Watch" (click)="IsDetails()">Next</button>
-                    </div>
                 </div>
                 <div>
                     <mat-form-field appearance="outline" class="input">
@@ -159,7 +152,7 @@
                     </mat-form-field>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="space-between   center">
-                    <button type="submit" class="registerbutton" *ngIf="!Show" (click)="IsClick()">Next</button>
+                    <button type="submit" class="registerbutton" *ngIf="!Show" (click)="educationDeatils()">Next</button>
                 </div>
             </div>
 
@@ -210,7 +203,7 @@
                     </mat-form-field>
                 </div>
                 <div>
-                    <button type="submit" class="registerbutton" *ngIf="!Watch" (click)="IsDetails()">Next</button>
+                    <button type="submit" class="registerbutton" *ngIf="!Watch" (click)="familyDetails()">Next</button>
                 </div>
             </div>
 
@@ -218,8 +211,8 @@
                 <h1 class="header">Professional Details</h1>
                 <mat-radio-group aria-label="Select an option">
                     <h3>Choose Fresher or Expirence</h3>
-                    <mat-radio-button (click)="IsGet()" value="1">Fresher</mat-radio-button>
-                    <div class="container" *ngIf="!Show1 && Watch1">
+                    <mat-radio-button (click)="isGet()" value="1">Fresher</mat-radio-button>
+                    <div class="container" *ngIf="!fresher && experience">
                         <div>
                             <mat-form-field appearance="fill" class="input1">
                                 <mat-label>Agreegate</mat-label>
@@ -244,8 +237,8 @@
                         </div>
                     </div>
                     <div>
-                        <mat-radio-button (click)="IsSet()" value="2">Expirience</mat-radio-button>
-                        <div class="container" *ngIf="!Watch1 ">
+                        <mat-radio-button (click)="isSet()" value="2">Expirience</mat-radio-button>
+                        <div class="container" *ngIf="!experience">
                             <div>`
                                 <mat-form-field appearance="fill" class="input1">
                                     <mat-label>Technical Skills</mat-label>
@@ -266,6 +259,7 @@
                         </div>
                     </div>
                 </mat-radio-group>
+                <button class="submitButton" (click)="submitDetails()">submit</button>
             </div>
         </form>
     </div>

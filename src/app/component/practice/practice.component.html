@@ -1,30 +1,58 @@
-<!-- <h4>NgFor (grouped)</h4>
- <ul *ngFor="let group of peopleByCountry"> (1)
-   <li>{{ group.country }}</li>
-   <ul>
-    <li *ngFor="let person of group.people"> (2)
-      {{ person.name }}
-    </li>
-   </ul>
- </ul> -->
 
- <body>
-        <div class="title">
-            <h5 class="fontSize">Doctors List and Details</h5>
-        </div>
-        <div class="main" *ngFor="let person of hello">
-    
+    <!-- <h1> {{title}}</h1>
+
+    <div [innerHtml]="obj.changer"></div> -->
+<app-mattoolbar></app-mattoolbar>
+<div class="background">
+    <div class="title">
+        <h5 class="fontSize">Doctors List and Details</h5>
+    </div>
+    <div style="display: flex;flex-direction: row; flex-wrap: wrap;">
+        <div class="main" *ngFor="let person of doctor">
             <div fxLayout="row" fxLayoutAlign="start start">
-                <img src="../../../assets/Images/doc6.jfif">
+                <img src="{{person.image}}">
                 <div fxLayout="column" fxLayoutAlign="start start" class="details">
-                    <div class="name" style="margin-bottom: 10px">{{person.name}}</div>
-                   
-                    <div>{{person.Exp}}</div>
+                    <div class="name" style="margin-bottom: 10px">Name : {{person.Name}} </div>
+                    <div style="margin-bottom: 10px"> Specialized : {{person.Specialized}}</div>
+                    <div>Experience : {{person.Experience}}</div>
                 </div>
             </div>
             <div class="ButtonDiv">
-                <button mat-stroked-button color="primary" class="ff">Book Appointment</button>
+                <button mat-stroked-button color="primary" class="ff" [routerLink]="['/appointment']">Book Appointment</button>
             </div>
         </div>
-    
-    </body>
+    </div>
+</div>
+<!-- 
+<div class="mainDiv">
+
+    <div class="table-structure">
+        <table mat-table [dataSource]="dataArr" class="mat-elevation-z8" class="table-card">
+
+            <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Name </th>
+                <td mat-cell *matCellDef="let element" class="column-data"> {{element.Name}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Specialized">
+                <th mat-header-cell *matHeaderCellDef class="table-head">Specialized</th>
+                <td mat-cell *matCellDef="let element" class="column-data"> {{element.Specialized}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Experience">
+                <th mat-header-cell *matHeaderCellDef class="table-head">Experience </th>
+                <td mat-cell *matCellDef="let element" class="column-data"> {{element.Experience}} </td>
+            </ng-container>
+
+            
+            <ng-container matColumnDef="Image">
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Image </th>
+                <td mat-cell *matCellDef="let element" class="column-data"> <img class="image" src="{{element.Image}}"></td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div> -->
