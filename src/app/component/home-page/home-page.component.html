@@ -10,11 +10,12 @@
                 <div fxLayout="column" fxLayoutAlign="start start" class="details">
                     <div class="name" style="margin-bottom: 10px">Name : {{person.Name}} </div>
                     <div style="margin-bottom: 10px"> Specialized : {{person.Specialized}}</div>
-                    <div>Experience : {{person.Exp}}</div>
+                    <div>Experience : {{person.Experience}}</div>
                 </div>
             </div>
-            <div class="ButtonDiv">
-                <button mat-stroked-button color="primary" class="ff" [routerLink]="['/appointment']">Book Appointment</button>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <button class="doctordetails" [routerLink]="['/appointment']">Doctor details</button>
+                <button mat-stroked-button color="primary" class="appointment" [routerLink]="['/patient']">Book Appointment</button>
             </div>
         </div>
     </div>
