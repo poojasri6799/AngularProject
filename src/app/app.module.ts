@@ -29,7 +29,9 @@ import { PatientComponent } from './component/patient/patient.component';
 import { AdminComponent } from './component/admin/admin.component';
 import { HttpClientModule } from "@angular/common/http";
 import { MatTableModule } from '@angular/material/table';
+import { AuthguardserviceService } from "../app/AuthGuard/authguardservice.service";
 
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,7 @@ import { MatTableModule } from '@angular/material/table';
     AppointmentComponent,
     PatientComponent,
     AdminComponent
+
   ],
   imports: [
     BrowserModule,
@@ -63,9 +66,10 @@ import { MatTableModule } from '@angular/material/table';
     MatMenuModule,
     MatTabsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [AuthguardserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

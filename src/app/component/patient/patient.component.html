@@ -5,22 +5,39 @@
     </div>
     <div class="main">
         <div style="margin-left: 10px">
-            <div fxLayout="column" fxLayoutAlign="center start" style="margin-top: 20px">
-                <mat-label class="message">Name</mat-label>
-                <input appearance="outline" class="setting" placeholder="Name" [(ngModel)]='name'>
-                <!-- <p>{{name}}</p> -->
+            <div fxLayout="column" fxLayoutAlign="center start" style="margin-top: 20px; margin-bottom: 20px;">
+                <mat-form-field appearance="outline" class="setting">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="name">
+                </mat-form-field>
+                
             </div>
-            <div fxLayout="column" fxLayoutAlign="center start">
-                <mat-label class="message">Age</mat-label>
-                <input appearance="outline" class="setting" placeholder="Age">
+            <div fxLayout="column" fxLayoutAlign="center start" class="fieldgap">
+                <mat-form-field appearance="outline" class="setting">
+                    <mat-label>Age</mat-label>
+                    <input matInput placeholder="Age">
+                </mat-form-field>
             </div>
-            <div fxLayout="column" fxLayoutAlign="center start">
-                <mat-label class="message">Phone no</mat-label>
-                <input appearance="outline" class="setting" placeholder="Number">
+            <div fxLayout="column" fxLayoutAlign="center start" class="fieldgap">
+                <mat-form-field appearance="outline" class="setting">
+                    <mat-label>Phone no</mat-label>
+                    <input matInput placeholder="Phone no">
+                </mat-form-field>
             </div>
-            <div fxLayout="column" fxLayoutAlign="center start">
-                <mat-label class="message">Message</mat-label>
-                <input appearance="outline" class="setting1" placeholder="Message">
+
+            <div class="fieldgap">
+                <mat-form-field appearance="outline" class="setting">
+                    <mat-label class="message">Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" placeholder="Chhose date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxLayoutAlign="center start" class="fieldgap">
+                <mat-form-field appearance="outline" class="setting">
+                    <mat-label>Message</mat-label>
+                    <input matInput placeholder="Message">
+                </mat-form-field>
             </div>
         </div>
         <div class="ButtonDiv">

@@ -9,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
 export class HomePageComponent implements OnInit {
   doctor: any = [];
   constructor(private http : HttpClient) { }
-
+  showDiscription: any = [];
   ngOnInit(): void {
     this.http.get("assets/Data/doctordata.json").subscribe(data =>{
       console.log(data);

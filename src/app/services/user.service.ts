@@ -4,6 +4,8 @@ import {
   MatSnackBar,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { environment } from '../../environments/environment';
+import {HttpService} from '../services/http.service'
 
 
 
@@ -11,7 +13,7 @@ import {
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private snackBar: MatSnackBar, private route: Router) { }
+  constructor(private snackBar: MatSnackBar, private route: Router, private httpService:HttpService) { }
 
   login(data:any) {
     data = {
@@ -28,5 +30,16 @@ export class UserService {
       duration: 1500,
       verticalPosition: this.verticalPosition,
     });
+  }
+  connectionUrl = environment.url;
+
+  getFunction(){
+    console.log("user service called");
+    return this.httpService.get(`${this.connectionUrl}`);
+  }
+
+  userLogin(user:any){
+    return this.httpService.post(`${this.connectionUrl}`, user);
+    
   }
 }

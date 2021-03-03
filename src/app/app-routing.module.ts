@@ -10,7 +10,7 @@ import { PracticeComponent } from './component/practice/practice.component';
 import { AppointmentComponent } from './component/appointment/appointment.component';
 import { PatientComponent } from './component/patient/patient.component';
 import { AdminComponent } from './component/admin/admin.component';
-import { AuthguardGuard } from "../app/authguard/authguard.guard"
+import {AuthguardGuard  } from "../app/AuthGuard/authguard.guard";
 
 const routes: Routes = [
   {
@@ -36,8 +36,7 @@ const routes: Routes = [
   },
   {
     path:'admin', component: AdminComponent,  canActivate: [AuthguardGuard]
-  },
-
+  }
  
 ];
 

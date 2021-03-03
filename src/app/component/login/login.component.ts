@@ -31,17 +31,29 @@ export class LoginComponent implements OnInit {
 
   isLogin() {
     if (this.Email.valid && this.Password.valid) {
-      // this.user.getSnackBarMsg("User Login");
-      // this.route.navigate(['/dashboard'])
-      if (this.Email.value == "quixy@gmail.com") {
-        this.user.getSnackBarMsg("Admin Login");
-        localStorage.setItem("Token", 'Admin')
-        this.route.navigate(['/admin'])
-      }else{
-        this.route.navigate(['/doctor']);
-        localStorage.setItem("Token", 'User')
-        this.user.getSnackBarMsg("User Login");
-      }
+      this.user.userLogin("data").subscribe(
+        (result: any) => {
+          console.log(result);
+        },
+        (error:any) => {
+          console.log(error);
+        }
+      );
     }
   }
+
+  //   if (this.Email.valid && this.Password.valid) {
+  //     // this.user.getSnackBarMsg("User Login");
+  //     // this.route.navigate(['/dashboard'])
+  //     if (this.Email.value == "quixy@gmail.com") {
+  //       this.user.getSnackBarMsg("Admin Login");
+  //       localStorage.setItem("Token", 'Admin')
+  //       this.route.navigate(['/admin'])
+  //     }else{
+  //       this.route.navigate(['/doctor']);
+  //       localStorage.setItem("Token", 'User')
+  //       this.user.getSnackBarMsg("User Login");
+  //     }
+  //   }
+  // }
 }

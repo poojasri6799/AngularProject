@@ -22,7 +22,7 @@
                 <div fxLayoutAlign="center" class="email">Poojasri@quixy.com</div>
                 <div fxLayout="row wrap" fxLayoutAlign="space-evenly">
                     <button mat-raised-button color="primary" type="submit " [routerLink]="['/login']"
-                        class="button">Logout</button>
+                        class="button" (click)="isLogout()">Logout</button>
                 </div>
             </div>
         </mat-menu>

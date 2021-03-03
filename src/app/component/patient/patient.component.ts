@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-patient',
@@ -15,6 +16,13 @@ export class PatientComponent implements OnInit {
   @Input() name: string = "";
 
   ngOnInit(): void {
+  }
+  dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
+    if (view === 'month') {
+      const date = cellDate.getDate();
+      return (date === 1 || date === 20) ? 'example-custom-date-class' : '';
+    }
+    return '';
   }
 
   isClick() {

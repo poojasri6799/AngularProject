@@ -1,0 +1,44 @@
+[
+    {
+        "id":"1",
+      "Name": "Saritha",
+      "HospitalName":"AINU Hospital",
+      "Specialized": "Cardiologist",
+      "Experience": "10",
+      "Description":"Cardiologists are physicians who diagnose and treat heart diseases and cardiovascular ailments. ... They only work with people who need special heart-related care or have had heart-related conditions earlier"
+      
+    },
+    {
+        "id":"2",
+      "Name": "Radha",
+      "HospitalName":"Medicover Hospitals",
+      "Specialized": "Gynaecologist",
+      "Experience": "8",
+      "Description":"Gynecologist is a health care professional specializing in the care of women and their reproductive health. Gynecologists provide medical treatment to women, focusing on issues related to the reproductive system."
+      
+    },
+    {
+        "id":"3",
+      "Name": "Amit",
+      "HospitalName":"Premier Hospital ",
+      "Specialized": "Dentist",
+      "Experience": "13",
+      "Description":"Dentists diagnose and treat problems with patients' teeth, gums, and related parts of the mouth. They provide advice and instruction on taking care of the teeth and gums and on diet choices that affect oral health."
+    },
+    {
+        "id":"4",
+      "Name": "Chandini",
+      "HospitalName":"Sunshine Hospitals",
+      "Specialized": "ENT specialist",
+      "Experience": "7",
+      "Description":"An ENT specialist or otolaryngologist is a doctor who specializes in problems and diseases of the ear, nose and throat. You may be suggested to approach an ENT specialist by your general physician, since an ENT specialist has more experience and knowledge than a general physician in areas of the ear, nose and throat"
+    },
+    {
+        "id":"5",
+      "Name": "Jhons",
+      "HospitalName":"Yashoda Hospitals",
+      "Specialized": "Dermatologist",
+      "Experience": "12",
+      "Description":"A dermatologist is a doctor who specializes in conditions involving the skin, hair, and nails. A dermatologist can identify and treat more than 3,000 conditions. These conditions include eczema, psoriasis, and skin cancer, among many others. The skin is an incredible organ."
+    }
+  ]

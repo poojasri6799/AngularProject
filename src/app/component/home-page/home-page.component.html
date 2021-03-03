@@ -4,19 +4,23 @@
         <h5 class="fontSize">Doctors List and Details</h5>
     </div>
     <div style="display: flex;flex-direction: row; flex-wrap: wrap;">
-        <div class="main" *ngFor="let person of doctor">
+        <div class="main" *ngFor="let person of doctor let i = index" (mouseover)="showDiscription[i]=true" (mouseout)="showDiscription[i]=false ">
             <div fxLayout="row" fxLayoutAlign="start start">
                 <img src="{{person.Image}}">
                 <div fxLayout="column" fxLayoutAlign="start start" class="details">
                     <div class="name" style="margin-bottom: 10px">Name : {{person.Name}} </div>
                     <div style="margin-bottom: 10px"> Specialized : {{person.Specialized}}</div>
+                    <div style="margin-bottom: 10px">HospitalName : {{person.HospitalName}}</div>
                     <div>Experience : {{person.Experience}}</div>
                 </div>
             </div>
             <div fxLayout="row" fxLayoutAlign="space-between center">
-                <button class="doctordetails" [routerLink]="['/appointment']">Doctor details</button>
                 <button mat-stroked-button color="primary" class="appointment" [routerLink]="['/patient']">Book Appointment</button>
             </div>
+            <mat-card class="discription" *ngIf="showDiscription[i]">
+                <p class="DetailHeader">Doctors Details</p>
+                <p class="Disc">{{person.Description}}</p> 
+            </mat-card>
         </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
+import {UserService} from '../../services/user.service'
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-appointment',
@@ -8,15 +9,26 @@ import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 })
 export class AppointmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient, private user:UserService) { }
 
+  doctor: any = [];
   ngOnInit(): void {
+  //   this.http.get("assets/Data/doctordetails.json").subscribe(data =>{
+  //     console.log(data);
+  //     this.doctor = data;
+  //  })
   }
-  dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
-    if (view === 'month') {
-      const date = cellDate.getDate();
-      return (date === 1 || date === 20) ? 'example-custom-date-class' : '';
-    }
-    return '';
+
+  onClick(){
+      this.user.getFunction().subscribe(
+        (result: any) => {
+          console.log(result);
+        },
+        (error:any) => {
+          console.log(error);
+        }
+      );
   }
 }
+  
+

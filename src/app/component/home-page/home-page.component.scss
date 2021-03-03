@@ -40,9 +40,9 @@
     height: 30px;
     border-radius: 10px;
     margin-right: 20px;
-    margin-top: 10px;
+    margin-left: 65%;
+    
 }
-
 .doctordetails{
     font-size: 15px;
     font-weight: bold;
@@ -62,12 +62,28 @@
   
 }
 
-      
+// .discription{
+//     //display: flex;
+//    // flex-wrap: wrap;
+//    //height: 200px;
+//   // position:relative;
+//    // right:  -100%;
+//    // left: -100%;
+//    bottom: 105%;
+//    left: 100%;
+//    //width: 205px;
+//    z-index: 1;
+//  }
+.DetailHeader{
+    font-size: 20px;
+    font-weight: bold;
+   font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+  }
 
-
-
-
-
-
-
-
+   .Disp{
+    color: rgb(36, 7, 7);
+    font-size: 20px;
+    font-style: italic;
+   font-family: 'Times New Roman', Times, serif;
+  }

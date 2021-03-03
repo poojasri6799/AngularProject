@@ -11,5 +11,8 @@ export class MattoolbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  isLogout(){
+    localStorage.removeItem('Token')
+  }
 
 }
